@@ -1,0 +1,10 @@
+POST http://localhost:4412/scores/new HTTP/1.1
+Content-Type: application/json
+
+{"data": {"user_id": "8334","game": "gol", "score": 563800 }}
+
+###
+GET http://localhost:4412/leaderboard/rank/2334 HTTP/1.1
+
+###
+GET http://localhost:4412/leaderboard HTTP/1.1
