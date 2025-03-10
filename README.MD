@@ -28,3 +28,8 @@
   "game": "chess",
   "score": 7500
 }
+
+## Каналы REDIS Pub/Sub
+- `leaderboard_update` – C помощью данного канала сервис Main-Service отправляет новые данные пользователя сервису Update-Leaderboard. Который в последствие обновляет данные в отсортированных наборах REDIS. 
+- `leaderboard_console` – Сервис Update-Leaderboard после обработки данных отправляет уведомление об измении сервису RealTime-Leaderboard.
+- `leaderboard_notification` – Сервис Update-Leaderboard после обработки данных отправляет уведомление об измении сервису Notification.
