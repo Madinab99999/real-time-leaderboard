@@ -9,26 +9,6 @@ services:
     volumes:
       - redis_data:/data 
     command: ["redis-server", "--appendonly", "yes"]
-    networks:
-      - app-network
-
-  app:
-    build: .
-    ports:
-      - ${API_REST_PORT}:${API_REST_PORT}
-    environment:
-      - API_REST_HOST=${API_REST_HOST}
-      - API_REST_PORT=${API_REST_PORT}
-      - REDIS_HOST=${REDIS_HOST}
-      - REDIS_PORT=${REDIS_PORT}
-    depends_on:
-      - redis
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
 
 volumes:
   redis_data:
